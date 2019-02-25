@@ -27,7 +27,7 @@ function install_if_packages
     if [ $? -ne 0 ]; then
         sudo easy_install pip
 	sudo pip install urllib3
-	sudo pip install influxdb
+	sudo pip install influxdb --ignore-installed
     fi
 
 }
