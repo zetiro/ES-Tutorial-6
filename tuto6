@@ -53,8 +53,9 @@ function install_gf_packages
         sudo wget -q ${GRAFANA_URL}/${GRAFANA_RPM} -O /usr/local/src/${GRAFANA_RPM}
     fi
 
-    rpm -ql elasticsearch > /dev/null
+    rpm -ql grafana > /dev/null
     if [ $? -ne 0 ]; then
+        sudo yum -y install fontconfig urw-fonts
         sudo rpm -ivh /usr/local/src/${GRAFANA_RPM}
     fi
 }
@@ -63,8 +64,8 @@ function install_gf_packages
 function start_gf_process
 {
     sudo systemctl daemon-reload
-    sudo systemctl enable grafana.service
-    sudo systemctl restart grafana.service
+    sudo systemctl enable grafana-server.service
+    sudo systemctl restart grafana-server.service
 }
 
 
