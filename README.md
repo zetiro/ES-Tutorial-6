@@ -48,21 +48,21 @@ Product Version. 6.6.0(2019/02/07 기준 Latest Ver.)
 
 ### InfluxDB
 
-```bash
-[ec2-user@ip-xxx-xxx-xxx-xxx ~]$ 
+```bash 
+[ec2-user@ip-xxx-xxx-xxx-xxx ES-Tutorial-6]$ influx -precision rfc3339
+Connected to http://localhost:8086 version 1.x.x
+InfluxDB shell 1.x.x
+> CREATE DATABASE mdb
+> use mdb
+> select * from docs
 
 ```
 
 ### Grafana
 
-```bash
-[ec2-user@ip-xxx-xxx-xxx-xxx ~]$ 
+* Web Browser 에 [http://FQDN:3000](http://FQDN:3000) 실행
 
-```
-
-* Web Browser 에 [http://ec2-3-0-99-205.ap-southeast-1.compute.amazonaws.com:9100/index.html?base_uri=http://{FQDN}:9200](http://ec2-3-0-99-205.ap-southeast-1.compute.amazonaws.com:9100/index.html?base_uri=http://{FQDN}:9200) 실행
-
-![Optional Text](image/es-head.png)
+![Optional Text](image/grafana.png)
 
 ## Trouble Shooting
 
