@@ -18,7 +18,7 @@ function install_if_packages
         sudo wget -q ${INFLUXDB_URL}/${INFLUXDB_RPM} -O /usr/local/src/${INFLUXDB_RPM}
     fi
 
-    rpm -ql elasticsearch > /dev/null
+    rpm -ql influxdb > /dev/null
     if [ $? -ne 0 ]; then
         sudo rpm -ivh /usr/local/src/${INFLUXDB_RPM}
     fi
