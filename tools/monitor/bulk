@@ -3,10 +3,13 @@
 ES=$1
 
 if [ -z $ES ]; then
-    echo "Usage : ./bulk ec2-x-xx-xx-xxx.ap-southeast-1.compute.amazonaws.com:9200"
+    echo "Usage : ./bulk localhost:9200"
 else
     while(true); do
-        curl -s -H 'Content-Type: application/x-ndjson' -XPOST "${ES}/bank/account/_bulk?pretty" --data-binary @accounts.json
+        curl -s -H 'Content-Type: application/x-ndjson' -XPOST "${ES}/bank/account/_bulk?pretty" --data-binary @accounts.json > /dev/nul;
+	python monworker.py
+	sleep 1
+
     done
 fi
 
