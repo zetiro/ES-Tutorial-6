@@ -17,6 +17,8 @@ Product Version. 6.6.0(2019/02/07 기준 Latest Ver.)
 
 이 튜토리얼에서는 rpm 파일을 이용하여 실습합니다.
 
+Elasticsearch 가 실행중인 아무 노드에서 실습합니다.
+
 ```bash
 [ec2-user@ip-xxx-xxx-xxx-xxx ~]$ sudo yum -y install git
 
